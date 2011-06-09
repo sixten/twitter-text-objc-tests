@@ -1,3 +1,6 @@
 [submodule "TwitterTextTests/twitter-text-conformance"]
 	path = TwitterTextTests/twitter-text-conformance
 	url = git@github.com:mzsanford/twitter-text-conformance.git
+[submodule "TwitterText"]
+	path = TwitterText
+	url = git@github.com:sixten/twitter-text-objc.git
