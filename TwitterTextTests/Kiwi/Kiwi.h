@@ -8,6 +8,10 @@
 #import "KiwiConfiguration.h"
 #import <SenTestingKit/SenTestingKit.h>
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
 #import "KWAfterAllNode.h"
 #import "KWAfterEachNode.h"
 #import "KWAsyncVerifier.h"
@@ -49,6 +53,7 @@
 #import "KWItNode.h"
 #import "KWMatchVerifier.h"
 #import "KWMatcher.h"
+#import "KWMatchers.h"
 #import "KWMatcherFactory.h"
 #import "KWMatching.h"
 #import "KWMessagePattern.h"
@@ -65,6 +70,7 @@
 #import "KWStringUtilities.h"
 #import "KWStub.h"
 #import "KWTestCase.h"
+#import "KWUserDefinedMatcher.h"
 #import "KWValue.h"
 #import "KWVerifying.h"
 
@@ -73,7 +79,14 @@
 #import "NSObject+KiwiStubAdditions.h"
 #import "NSObject+KiwiVerifierAdditions.h"
 
+#import "KiwiMacros.h"
+
 // Some Foundation headers use Kiwi keywords (e.g. 'should') as identifiers for
 // parameter names. Including this last allows the use of Kiwi keywords without
 // conflicting with these headers (hopefully!).
-#import "KiwiMacros.h"
+#import "KiwiBlockMacros.h"
+
+#if defined(__cplusplus)
+}
+#endif
+

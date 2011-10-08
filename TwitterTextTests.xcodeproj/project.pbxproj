@@ -98,6 +98,8 @@
 		9C44B2FD1384AE9E0032844D /* AutolinkSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C44B2FB1384AE9E0032844D /* AutolinkSpec.m */; };
 		9CC4FB4213A06B66007083C0 /* libTwitterText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC4FB4113A06B66007083C0 /* libTwitterText.a */; };
 		9CC4FB4513A06CD1007083C0 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC4FB4413A06CD1007083C0 /* libicucore.dylib */; };
+		9CE9B8E9144092EF00E4E144 /* KWMatchers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9B8E6144092EF00E4E144 /* KWMatchers.m */; };
+		9CE9B8EA144092EF00E4E144 /* KWUserDefinedMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9B8E8144092EF00E4E144 /* KWUserDefinedMatcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -276,6 +278,13 @@
 		9C44B2FB1384AE9E0032844D /* AutolinkSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutolinkSpec.m; sourceTree = "<group>"; };
 		9CC4FB4113A06B66007083C0 /* libTwitterText.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTwitterText.a; sourceTree = SOURCE_ROOT; };
 		9CC4FB4413A06CD1007083C0 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		9CE9B8E2144092EF00E4E144 /* KiwiBlockMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiwiBlockMacros.h; sourceTree = "<group>"; };
+		9CE9B8E3144092EF00E4E144 /* KiwiNewMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiwiNewMacros.h; sourceTree = "<group>"; };
+		9CE9B8E4144092EF00E4E144 /* KWExampleGroupDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWExampleGroupDelegate.h; sourceTree = "<group>"; };
+		9CE9B8E5144092EF00E4E144 /* KWMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWMatchers.h; sourceTree = "<group>"; };
+		9CE9B8E6144092EF00E4E144 /* KWMatchers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWMatchers.m; sourceTree = "<group>"; };
+		9CE9B8E7144092EF00E4E144 /* KWUserDefinedMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWUserDefinedMatcher.h; sourceTree = "<group>"; };
+		9CE9B8E8144092EF00E4E144 /* KWUserDefinedMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWUserDefinedMatcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,8 +366,10 @@
 			isa = PBXGroup;
 			children = (
 				9C1BD91B137F13A300ED09D2 /* Kiwi.h */,
+				9CE9B8E2144092EF00E4E144 /* KiwiBlockMacros.h */,
 				9C1BD91C137F13A300ED09D2 /* KiwiConfiguration.h */,
 				9C1BD91D137F13A300ED09D2 /* KiwiMacros.h */,
+				9CE9B8E3144092EF00E4E144 /* KiwiNewMacros.h */,
 				9C1BD91E137F13A300ED09D2 /* KWAfterAllNode.h */,
 				9C1BD91F137F13A300ED09D2 /* KWAfterAllNode.m */,
 				9C1BD920137F13A300ED09D2 /* KWAfterEachNode.h */,
@@ -412,6 +423,7 @@
 				9C1BD950137F13A300ED09D2 /* KWExampleGroup.m */,
 				9C1BD951137F13A300ED09D2 /* KWExampleGroupBuilder.h */,
 				9C1BD952137F13A300ED09D2 /* KWExampleGroupBuilder.m */,
+				9CE9B8E4144092EF00E4E144 /* KWExampleGroupDelegate.h */,
 				9C1BD953137F13A300ED09D2 /* KWExampleNode.h */,
 				9C1BD954137F13A300ED09D2 /* KWExampleNodeVisitor.h */,
 				9C1BD955137F13A300ED09D2 /* KWExistVerifier.h */,
@@ -442,6 +454,8 @@
 				9C1BD96E137F13A300ED09D2 /* KWItNode.m */,
 				9C1BD96F137F13A300ED09D2 /* KWMatcher.h */,
 				9C1BD970137F13A300ED09D2 /* KWMatcher.m */,
+				9CE9B8E5144092EF00E4E144 /* KWMatchers.h */,
+				9CE9B8E6144092EF00E4E144 /* KWMatchers.m */,
 				9C1BD971137F13A300ED09D2 /* KWMatcherFactory.h */,
 				9C1BD972137F13A300ED09D2 /* KWMatcherFactory.m */,
 				9C1BD973137F13A300ED09D2 /* KWMatching.h */,
@@ -480,6 +494,8 @@
 				9C1BD994137F13A300ED09D2 /* KWStub.m */,
 				9C1BD995137F13A300ED09D2 /* KWTestCase.h */,
 				9C1BD996137F13A300ED09D2 /* KWTestCase.m */,
+				9CE9B8E7144092EF00E4E144 /* KWUserDefinedMatcher.h */,
+				9CE9B8E8144092EF00E4E144 /* KWUserDefinedMatcher.m */,
 				9C1BD997137F13A300ED09D2 /* KWValue.h */,
 				9C1BD998137F13A300ED09D2 /* KWValue.m */,
 				9C1BD999137F13A300ED09D2 /* KWVerifying.h */,
@@ -719,6 +735,8 @@
 				9C44B2F51384AD540032844D /* HitHighlighterConformanceSpec.m in Sources */,
 				9C44B2FC1384AE9E0032844D /* AutolinkConformanceSpec.m in Sources */,
 				9C44B2FD1384AE9E0032844D /* AutolinkSpec.m in Sources */,
+				9CE9B8E9144092EF00E4E144 /* KWMatchers.m in Sources */,
+				9CE9B8EA144092EF00E4E144 /* KWUserDefinedMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
