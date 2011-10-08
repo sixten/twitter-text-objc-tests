@@ -98,6 +98,7 @@
 		9C44B2FD1384AE9E0032844D /* AutolinkSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C44B2FB1384AE9E0032844D /* AutolinkSpec.m */; };
 		9CC4FB4213A06B66007083C0 /* libTwitterText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC4FB4113A06B66007083C0 /* libTwitterText.a */; };
 		9CC4FB4513A06CD1007083C0 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC4FB4413A06CD1007083C0 /* libicucore.dylib */; };
+		9CE9B8E01440918800E4E144 /* validate.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9CE9B8DF1440918800E4E144 /* validate.yml */; };
 		9CE9B8E9144092EF00E4E144 /* KWMatchers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9B8E6144092EF00E4E144 /* KWMatchers.m */; };
 		9CE9B8EA144092EF00E4E144 /* KWUserDefinedMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9B8E8144092EF00E4E144 /* KWUserDefinedMatcher.m */; };
 /* End PBXBuildFile section */
@@ -278,6 +279,7 @@
 		9C44B2FB1384AE9E0032844D /* AutolinkSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutolinkSpec.m; sourceTree = "<group>"; };
 		9CC4FB4113A06B66007083C0 /* libTwitterText.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTwitterText.a; sourceTree = SOURCE_ROOT; };
 		9CC4FB4413A06CD1007083C0 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		9CE9B8DF1440918800E4E144 /* validate.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = validate.yml; sourceTree = "<group>"; };
 		9CE9B8E2144092EF00E4E144 /* KiwiBlockMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiwiBlockMacros.h; sourceTree = "<group>"; };
 		9CE9B8E3144092EF00E4E144 /* KiwiNewMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiwiNewMacros.h; sourceTree = "<group>"; };
 		9CE9B8E4144092EF00E4E144 /* KWExampleGroupDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWExampleGroupDelegate.h; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				9C1BDB83137F180700ED09D2 /* autolink.yml */,
 				9C1BDB84137F180700ED09D2 /* extract.yml */,
 				9C1BDB85137F180700ED09D2 /* hit_highlighting.yml */,
+				9CE9B8DF1440918800E4E144 /* validate.yml */,
 			);
 			path = "twitter-text-conformance";
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				9C1BDB9E137F180700ED09D2 /* extract.yml in Resources */,
 				9C1BDB9F137F180700ED09D2 /* hit_highlighting.yml in Resources */,
 				9C1BDBAD137F8E7200ED09D2 /* TestURLs.plist in Resources */,
+				9CE9B8E01440918800E4E144 /* validate.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
