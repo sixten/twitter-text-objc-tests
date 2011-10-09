@@ -24,13 +24,14 @@
 		<string>http://mrs.domain-dash.biz</string>
 		<string>http://x.com/has/one/char/domain</string>
 		<string>http://t.co/nwcLTFF</string>
+		<string>www.twitter.com</string>
+		<string>www.yahoo.co.jp</string>
+		<string>t.co/blahblah</string>
 	</array>
 	<key>INVALID</key>
 	<array>
 		<string>http://no-tld</string>
 		<string>http://tld-too-short.x</string>
-		<string>www.foobar.com</string>
-		<string>WWW.FOOBAR.COM</string>
 		<string>http://-doman_dash.com</string>
 	</array>
 </dict>

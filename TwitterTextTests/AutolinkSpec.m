@@ -34,11 +34,11 @@ describe(@"TWAutolink", ^{
       [[result should] equal:@"<a href=\"http://twitter.com/#search\" rel=\"nofollow\">http://twitter.com/#search</a>"];
     });
     
-    it(@"should link a hashtag preceded by Japanese", ^{
-      id result = [autolink autoLink:@"の#twj_dev"];
+    it(@"should link a hashtag followed by Japanese", ^{
+      id result = [autolink autoLink:@"#twj_devの"];
       
       [result shouldNotBeNil];
-      [[result should] equal:@"の<a href=\"http://twitter.com/search?q=%23twj_dev\" title=\"#twj_dev\" class=\"tweet-url hashtag\" rel=\"nofollow\">#twj_dev</a>"];
+      [[result should] equal:@"<a href=\"http://twitter.com/search?q=%23twj_devの\" title=\"#twj_devの\" class=\"tweet-url hashtag\" rel=\"nofollow\">#twj_devの</a>"];
     });
     
     it(@"should link Wikipedia-style URLs", ^{
@@ -49,10 +49,10 @@ describe(@"TWAutolink", ^{
     });
     
     it(@"should link balanced parens with a double quote inside", ^{
-      id result = [autolink autoLink:@"http://foo.bar/foo_(\")_bar"];
+      id result = [autolink autoLink:@"http://foo.com/foo_(\")_bar"];
       
       [result shouldNotBeNil];
-      [[result should] equal:@"<a href=\"http://foo.bar/foo_\" rel=\"nofollow\">http://foo.bar/foo_</a>(\")_bar"];
+      [[result should] equal:@"<a href=\"http://foo.com/foo_\" rel=\"nofollow\">http://foo.com/foo_</a>(\")_bar"];
     });
     
     it(@"should link multiple URLs in different formats", ^{
@@ -60,6 +60,13 @@ describe(@"TWAutolink", ^{
       
       [result shouldNotBeNil];
       [[result should] equal:@"<a href=\"http://foo.com\" rel=\"nofollow\">http://foo.com</a> <a href=\"https://bar.com\" rel=\"nofollow\">https://bar.com</a> <a href=\"http://mail.foobar.org\" rel=\"nofollow\">http://mail.foobar.org</a>"];
+    });
+    
+    it(@"should link URL embedded in Japanese", ^{
+      id result = [autolink autoLink:@"いまなにしてるhttp://example.comいまなにしてる"];
+      
+      [result shouldNotBeNil];
+      [[result should] equal:@"いまなにしてる<a href=\"http://example.com\" rel=\"nofollow\">http://example.com</a>いまなにしてる"];
     });
     
     // See Also: http://github.com/mzsanford/twitter-text-rb/issues#issue/5

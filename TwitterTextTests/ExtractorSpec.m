@@ -230,7 +230,7 @@ describe(@"TWExtractor", ^{
       });
     });
     
-    context(@"should accept a block arugment", ^{
+    context(@"should accept a block argument", ^{
       pending(@"should call the block on match", ^{
         // support for iOS 4+/blocks TBD
       });
@@ -267,6 +267,16 @@ describe(@"TWExtractor", ^{
           [[result should] haveCountOf:1];
           [[result should] contain:url];
         }
+      });
+      
+      it(@"should extract URL without protocol surrounded by CJK characters", ^(void) {
+        NSString* text = @"これは日本語です。example.com/path/index.html中国語example.com/path한국";
+        id result = [extractor extractURLs:text];
+        
+        [result shouldNotBeNil];
+        [[result should] beKindOfClass:[NSArray class]];
+        [[result should] haveCountOf:2];
+        [[result should] equal:[NSArray arrayWithObjects:@"example.com/path/index.html", @"example.com/path", nil]];
       });
     });
     
@@ -403,34 +413,6 @@ describe(@"TWExtractor", ^{
           [[result should] contain:@"pre"];
         });
       });
-      
-      context(@"should NOT allow Japanese", ^{
-        NSArray* tests = [NSArray arrayWithObjects:@"会議中", @"ハッシュ", nil];
-        
-        it(@"should NOT extract bare hashtags", ^{
-          for( NSString* hashtag in tests ) {
-            NSString* text = [@"#" stringByAppendingString:hashtag];
-            id result = [extractor extractHashtags:text];
-            //NSLog(@"Attempted to extract »%@« from »%@«: %@", hashtag, text, result);
-            
-            [result shouldNotBeNil];
-            [[result should] beKindOfClass:[NSArray class]];
-            [[result should] beEmpty];
-          }
-        });
-        
-        it(@"should NOT extract hashtags within text", ^{
-          for( NSString* hashtag in tests ) {
-            NSString* text = [NSString stringWithFormat:@"pre-text #%@ post-text", hashtag];
-            id result = [extractor extractHashtags:text];
-            //NSLog(@"Attempted to extract »%@« from »%@«: %@", hashtag, text, result);
-            
-            [result shouldNotBeNil];
-            [[result should] beKindOfClass:[NSArray class]];
-            [[result should] beEmpty];
-          }
-        });
-      });
     });
     
     it(@"should not extract numeric hashtags", ^{
@@ -439,6 +421,15 @@ describe(@"TWExtractor", ^{
       [result shouldNotBeNil];
       [[result should] beKindOfClass:[NSArray class]];
       [[result should] beEmpty];
+    });
+    
+    it(@"should extract hashtag followed by punctuations", ^{
+      id result = [extractor extractHashtags:@"#test1: #test2; #test3\""];
+      
+      [result shouldNotBeNil];
+      [[result should] beKindOfClass:[NSArray class]];
+      [[result should] haveCountOf:3];
+      [[result should] containObjects:@"test1", @"test2", @"test3", nil];
     });
   });
   
@@ -506,24 +497,6 @@ describe(@"TWExtractor", ^{
         
         it(@"should not allow the division character", ^{
           matchHashtagInText(@"pre", @"#pre\u00f7post", 0);
-        });
-      });
-      
-      context(@"should NOT allow Japanese", ^{
-        NSArray* tests = [NSArray arrayWithObjects:@"会議中", @"ハッシュ", nil];
-        
-        it(@"should NOT extract bare hashtags", ^{
-          for( NSString* hashtag in tests ) {
-            NSString* text = [@"#" stringByAppendingString:hashtag];
-            noMatchHashtagInText(text);
-          }
-        });
-        
-        it(@"should NOT extract hashtags within text", ^{
-          for( NSString* hashtag in tests ) {
-            NSString* text = [NSString stringWithFormat:@"pre-text #%@ post-text", hashtag];
-            noMatchHashtagInText(text);
-          }
         });
       });
     });
