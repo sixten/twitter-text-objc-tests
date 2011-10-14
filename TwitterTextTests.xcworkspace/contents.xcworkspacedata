@@ -5,6 +5,6 @@
       location = "container:TwitterTextTests.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../TwitterText/TwitterText.xcodeproj">
+      location = "container:TwitterText/TwitterText.xcodeproj">
    </FileRef>
 </Workspace>
