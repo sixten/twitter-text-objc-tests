@@ -294,7 +294,7 @@ describe(@"TWExtractor", ^{
   
   describe(@"urls with indices", ^{
     void (^matchURLInText)(NSString*,NSString*,NSUInteger) = ^( NSString* url, NSString* text, NSUInteger offset ){
-      TWEntity* target   = [[TWEntity alloc] initWithValue:url rangeInText:NSMakeRange(offset, [url length]) type:TWEntityTypeURL];
+      TWEntity* target   = [TWEntity entityWithValue:url rangeInText:NSMakeRange(offset, [url length]) type:TWEntityTypeURL];
       
       id result = [extractor extractURLsWithIndices:text];
       //NSLog(@"Attempted to extract »%@« from »%@«: %@", url, text, result);
@@ -305,8 +305,6 @@ describe(@"TWExtractor", ^{
       
       id match = [result lastObject];
       [[match should] equal:target];
-      
-      [target release];
     };
     
     context(@"matching URLS", ^{
@@ -436,7 +434,7 @@ describe(@"TWExtractor", ^{
   
   describe(@"hashtags with indices", ^{
     void (^matchHashtagInText)(NSString*,NSString*,NSUInteger) = ^( NSString* hashtag, NSString* text, NSUInteger offset ){
-      TWEntity* target   = [[TWEntity alloc] initWithValue:hashtag rangeInText:NSMakeRange(offset, [hashtag length]+1) type:TWEntityTypeHashtag];
+      TWEntity* target   = [TWEntity entityWithValue:hashtag rangeInText:NSMakeRange(offset, [hashtag length]+1) type:TWEntityTypeHashtag];
       
       id result = [extractor extractHashtagsWithIndices:text];
       //NSLog(@"Attempted to extract »%@« from »%@«: %@", hashtag, text, result);
@@ -447,8 +445,6 @@ describe(@"TWExtractor", ^{
       
       id match = [result lastObject];
       [[match should] equal:target];
-      
-      [target release];
     };
     
     void (^noMatchHashtagInText)(NSString*) = ^( NSString* text ){
